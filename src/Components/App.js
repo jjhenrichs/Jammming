@@ -6,10 +6,12 @@ import Playlist from "./Playlist";
 function App() {
   return (
     <div className={styles.container}>
-      <h1>Jammming</h1>
-      <p>`${process.env.REACT_APP_CLIENT_ID}`</p>
+      <h1>
+        Ja<span className={styles.highlight}>mmm</span>ing
+      </h1>
+      {/* <p>`${process.env.REACT_APP_CLIENT_ID}`</p> */}
       <SearchBar />
-      <div>
+      <div className={styles.dataContainer}>
         <SearchResult />
         <Playlist />
       </div>

@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.input {
+  width: 400px;
+  height: 30px;
+  margin: 100px auto 50px;
+  font-size: 1.5rem;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.btn {
+  width: 100px;
+  height: 40px;
+  font-size: 1.1rem;
+  margin: 0 20px 50px;
+  border-radius: 20px;
+  background-color: mediumspringgreen;
+  color: #fff;
+  border: transparent;
+  cursor: pointer;
+}
