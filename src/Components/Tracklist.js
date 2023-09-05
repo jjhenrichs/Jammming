@@ -4,7 +4,7 @@ import Track from "./Track";
 
 export default function Tracklist() {
   return (
-    <div>
+    <div className={styles.container}>
       <Track />
       <Track />
       <Track />

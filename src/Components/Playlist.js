@@ -4,9 +4,12 @@ import Tracklist from "./Tracklist";
 
 export default function Playlist() {
   return (
-    <div>
-      <h2>These are my Playlists</h2>
+    <div className={styles.container}>
+      <input type="text" className={styles.input} />
       <Tracklist />
+      <button type="submit" className={styles.btn}>
+        Save to Spotify
+      </button>
     </div>
   );
 }

@@ -10,3 +10,10 @@
 h1 {
   font-size: 3.5rem;
 }
+
+.dataContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0 50px;
+}
