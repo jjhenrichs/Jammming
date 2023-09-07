@@ -5,7 +5,11 @@ import Tracklist from "./Tracklist";
 export default function Playlist() {
   return (
     <div className={styles.container}>
-      <input type="text" className={styles.input} />
+      <input
+        type="text"
+        className={styles.input}
+        placeholder="New Playlist Name"
+      />
       <Tracklist />
       <button type="submit" className={styles.btn}>
         Save to Spotify

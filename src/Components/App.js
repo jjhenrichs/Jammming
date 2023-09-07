@@ -7,6 +7,12 @@ import Playlist from "./Playlist";
 function App() {
   const [researchInput, setResearchInput] = useState("");
 
+  useEffect(() => {
+    fetch("https://reqres.in/api/users")
+      .then((res) => res.json())
+      .then((data) => console.log(data.data));
+  }, []);
+
   function handleSearchInput({ target }) {
     console.log(target.value);
     setResearchInput(target.value);
