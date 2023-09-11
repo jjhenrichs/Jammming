@@ -3,27 +3,22 @@ import styles from "../style/App.module.css";
 import SearchBar from "./SearchBar";
 import SearchResult from "./SearchResults";
 import Playlist from "./Playlist";
+import Spotify from "../utils/Spotify";
 
 function App() {
-  const [researchInput, setResearchInput] = useState("");
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
-    fetch("https://reqres.in/api/users")
-      .then((res) => res.json())
-      .then((data) => console.log(data.data));
+    const accessToken = Spotify.getAccessToken();
+    console.log(accessToken);
   }, []);
 
   function handleSearchInput({ target }) {
-    console.log(target.value);
-    setResearchInput(target.value);
+    setSearchInput(target.value);
   }
 
-  function handleSubmit() {
-    alert(researchInput);
-  }
-
-  function handleClearInput() {
-    setResearchInput("");
+  function search() {
+    alert(searchInput);
   }
 
   return (
@@ -32,10 +27,9 @@ function App() {
         Ja<span className={styles.highlight}>mmm</span>ing
       </h1>
       <SearchBar
-        value={researchInput}
+        value={searchInput}
         onChange={handleSearchInput}
-        submitQuery={handleSubmit}
-        clearQuery={handleClearInput}
+        submitQuery={search}
       />
       <div className={styles.dataContainer}>
         <SearchResult />

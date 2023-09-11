@@ -12,9 +12,6 @@ export default function SearchBar(props) {
         onChange={props.onChange}
       />
       <div className={styles.btnContainer}>
-        <button type="reset" className={styles.btn} onClick={props.clearQuery}>
-          Clear
-        </button>
         <button
           type="submit"
           className={styles.btn}
