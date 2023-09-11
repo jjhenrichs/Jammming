@@ -9,8 +9,7 @@ function App() {
   const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
-    const accessToken = Spotify.getAccessToken();
-    console.log(accessToken);
+    Spotify.getAccessToken();
   }, []);
 
   function handleSearchInput({ target }) {
