@@ -10,7 +10,6 @@ export default function Playlist() {
         className={styles.input}
         placeholder="New Playlist Name"
       />
-      <Tracklist />
       <button type="submit" className={styles.btn}>
         Save to Spotify
       </button>
