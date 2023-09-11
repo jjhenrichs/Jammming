@@ -7,6 +7,7 @@ import Spotify from "../utils/Spotify";
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
+  const [searchResult, setSearchResult] = useState([]);
 
   useEffect(() => {
     Spotify.getAccessToken();
@@ -16,8 +17,10 @@ function App() {
     setSearchInput(target.value);
   }
 
-  function search() {
-    Spotify.search(searchInput);
+  async function search() {
+    const result = await Spotify.search(searchInput);
+    setSearchResult(result);
+    console.log(searchResult);
   }
 
   return (

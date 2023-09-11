@@ -38,7 +38,13 @@ const Spotify = {
       }
     );
     const data = await response.json();
-    console.log(data);
+
+    return data.tracks.items.map((track) => ({
+      id: track.album.id,
+      album: track.album.name,
+      artist: track.artists[0].name,
+      song: track.name,
+    }));
   },
 };
 
