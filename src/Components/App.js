@@ -18,7 +18,7 @@ function App() {
   }
 
   function search() {
-    alert(searchInput);
+    Spotify.search(searchInput);
   }
 
   return (
