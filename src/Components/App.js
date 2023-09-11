@@ -20,7 +20,6 @@ function App() {
   async function search() {
     const result = await Spotify.search(searchInput);
     setSearchResult(result);
-    console.log(searchResult);
   }
 
   return (
@@ -34,7 +33,7 @@ function App() {
         submitQuery={search}
       />
       <div className={styles.dataContainer}>
-        <SearchResult />
+        <SearchResult results={searchResult} />
         <Playlist />
       </div>
     </div>
