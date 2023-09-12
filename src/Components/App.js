@@ -10,8 +10,8 @@ function App() {
   const [searchResult, setSearchResult] = useState([]);
   const [playlist, setPlaylist] = useState([
     { key: 1, song: "Song 1", album: "Album 1", artist: "Artist 1" },
-    { key: 1, song: "Song 2", album: "Album 2", artist: "Artist 2" },
-    { key: 1, song: "Song 3", album: "Album 3", artist: "Artist 3" },
+    { key: 2, song: "Song 2", album: "Album 2", artist: "Artist 2" },
+    { key: 3, song: "Song 3", album: "Album 3", artist: "Artist 3" },
   ]);
 
   useEffect(() => {
@@ -42,7 +42,7 @@ function App() {
         submitQuery={search}
       />
       <div className={styles.dataContainer}>
-        <SearchResult results={searchResult} />
+        <SearchResult results={searchResult} addToPlaylist={add} />
         <Playlist playlist={playlist} />
       </div>
     </div>

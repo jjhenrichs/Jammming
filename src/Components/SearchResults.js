@@ -7,7 +7,11 @@ export default function SearchResult(props) {
     <div className={styles.container}>
       <h2>Results</h2>
       <div className={styles.trackContainer}>
-        <Tracklist tracks={props.results} inPlaylist={false} />
+        <Tracklist
+          tracks={props.results}
+          inPlaylist={false}
+          addToPlaylist={props.addToPlaylist}
+        />
       </div>
     </div>
   );
