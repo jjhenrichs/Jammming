@@ -7,7 +7,7 @@ export default function Tracklist(props) {
     <div className={styles.container}>
       {props.tracks.map((track) => (
         <Track
-          id={track.id}
+          key={track.id}
           album={track.album}
           artist={track.artist}
           song={track.song}

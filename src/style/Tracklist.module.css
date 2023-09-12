@@ -1,4 +1,5 @@
 .container {
-  margin: 20px 10px 0;
-  border-bottom: 1px solid green;
+  margin: 5px 10px;
+  overflow-y: scroll;
+  max-height: 300px;
 }
