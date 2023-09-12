@@ -1,6 +1,6 @@
 .container {
   margin: 5px 10px;
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 300px;
 }
 

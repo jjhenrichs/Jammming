@@ -10,7 +10,9 @@ export default function Track(props) {
           {props.artist} | {props.album}
         </p>
       </div>
-      <div className={styles.action_icon}>+</div>
+      <div className={styles.action_icon} onClick={() => console.log(props)}>
+        {props.inPlaylist ? "-" : "+"}
+      </div>
     </div>
   );
 }
