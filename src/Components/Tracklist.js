@@ -5,14 +5,16 @@ import Track from "./Track";
 export default function Tracklist(props) {
   return (
     <div className={styles.container}>
-      {props.tracks.map((track) => (
-        <Track
-          key={track.id}
-          album={track.album}
-          artist={track.artist}
-          song={track.song}
-        />
-      ))}
+      <div>
+        {props.tracks.map((track) => (
+          <Track
+            key={track.id}
+            album={track.album}
+            artist={track.artist}
+            song={track.song}
+          />
+        ))}
+      </div>
     </div>
   );
 }
