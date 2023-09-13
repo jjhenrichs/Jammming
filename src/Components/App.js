@@ -33,8 +33,7 @@ function App() {
   }
 
   function remove(track) {
-    // setPlaylist(playlist.filter((savedTrack) => savedTrack.id === track.id));
-    alert(`Removing ${track.song} from the playlist`);
+    setPlaylist(playlist.filter((savedTrack) => savedTrack.id !== track.id));
   }
 
   return (
