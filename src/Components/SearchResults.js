@@ -10,7 +10,7 @@ export default function SearchResult(props) {
         <Tracklist
           tracks={props.results}
           inPlaylist={false}
-          addToPlaylist={props.addToPlaylist}
+          onAdd={props.onAdd}
         />
       </div>
     </div>

@@ -11,7 +11,8 @@ export default function Tracklist(props) {
             key={track.id}
             track={track}
             inPlaylist={props.inPlaylist}
-            addToPlaylist={props.addToPlaylist}
+            onAdd={props.onAdd}
+            onRemove={props.onRemove}
           />
         ))}
       </div>

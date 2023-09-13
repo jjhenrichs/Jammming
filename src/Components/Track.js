@@ -10,15 +10,25 @@ export default function Track(props) {
           {props.track.artist} | {props.track.album}
         </p>
       </div>
-      <div
-        className={styles.action_icon}
-        onClick={() => {
-          console.log(props);
-          props.addToPlaylist(props.track);
-        }}
-      >
-        {props.inPlaylist ? "-" : "+"}
-      </div>
+      {props.inPlaylist ? (
+        <div
+          className={styles.action_icon}
+          onClick={() => {
+            props.onRemove(props.track);
+          }}
+        >
+          -
+        </div>
+      ) : (
+        <div
+          className={styles.action_icon}
+          onClick={() => {
+            props.onAdd(props.track);
+          }}
+        >
+          +
+        </div>
+      )}
     </div>
   );
 }

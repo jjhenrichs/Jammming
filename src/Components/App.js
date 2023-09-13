@@ -32,6 +32,11 @@ function App() {
     }
   }
 
+  function remove(track) {
+    // setPlaylist(playlist.filter((savedTrack) => savedTrack.id === track.id));
+    alert(`Removing ${track.song} from the playlist`);
+  }
+
   return (
     <div className={styles.container}>
       <h1>
@@ -43,8 +48,8 @@ function App() {
         submitQuery={search}
       />
       <div className={styles.dataContainer}>
-        <SearchResult results={searchResult} addToPlaylist={add} />
-        <Playlist playlist={playlist} />
+        <SearchResult results={searchResult} onAdd={add} />
+        <Playlist playlist={playlist} onRemove={remove} />
       </div>
     </div>
   );
