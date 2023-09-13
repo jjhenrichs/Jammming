@@ -5,13 +5,11 @@ import Track from "./Track";
 export default function Tracklist(props) {
   return (
     <div className={styles.container}>
-      <div>
+      <div onClick={() => console.log(props)}>
         {props.tracks.map((track) => (
           <Track
             key={track.id}
-            album={track.album}
-            artist={track.artist}
-            song={track.song}
+            track={track}
             inPlaylist={props.inPlaylist}
             addToPlaylist={props.addToPlaylist}
           />

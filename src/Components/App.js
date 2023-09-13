@@ -8,11 +8,7 @@ import Spotify from "../utils/Spotify";
 function App() {
   const [searchInput, setSearchInput] = useState("");
   const [searchResult, setSearchResult] = useState([]);
-  const [playlist, setPlaylist] = useState([
-    { key: 1, song: "Song 1", album: "Album 1", artist: "Artist 1" },
-    { key: 2, song: "Song 2", album: "Album 2", artist: "Artist 2" },
-    { key: 3, song: "Song 3", album: "Album 3", artist: "Artist 3" },
-  ]);
+  const [playlist, setPlaylist] = useState([]);
 
   useEffect(() => {
     Spotify.getAccessToken();
@@ -28,7 +24,12 @@ function App() {
   }
 
   function add(track) {
-    setPlaylist([track, ...playlist]);
+    // some() tests whether at least one value in the array is similar to the passed value
+    if (playlist.some((savedTrack) => savedTrack.id === track.id)) {
+      alert(`${track.song} has already been added`);
+    } else {
+      setPlaylist([track, ...playlist]);
+    }
   }
 
   return (
