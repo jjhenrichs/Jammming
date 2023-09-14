@@ -5,7 +5,7 @@ import Track from "./Track";
 export default function Tracklist(props) {
   return (
     <div className={styles.container}>
-      <div onClick={() => console.log(props)}>
+      <div>
         {props.tracks.map((track) => (
           <Track
             key={track.id}

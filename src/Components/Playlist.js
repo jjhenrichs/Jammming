@@ -11,7 +11,7 @@ export default function Playlist(props) {
         inPlaylist={true}
         onRemove={props.onRemove}
       />
-      <button type="submit" className={styles.btn}>
+      <button type="submit" className={styles.btn} onClick={props.onSave}>
         Save to Spotify
       </button>
     </div>

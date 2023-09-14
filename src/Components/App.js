@@ -36,6 +36,10 @@ function App() {
     setPlaylist(playlist.filter((savedTrack) => savedTrack.id !== track.id));
   }
 
+  function savePlaylist() {
+    console.log("Saving playlist to Spotify");
+  }
+
   return (
     <div className={styles.container}>
       <h1>
@@ -48,7 +52,7 @@ function App() {
       />
       <div className={styles.dataContainer}>
         <SearchResult results={searchResult} onAdd={add} />
-        <Playlist playlist={playlist} onRemove={remove} />
+        <Playlist playlist={playlist} onRemove={remove} onSave={savePlaylist} />
       </div>
     </div>
   );
