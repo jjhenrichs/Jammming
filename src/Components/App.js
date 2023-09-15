@@ -8,6 +8,7 @@ import Spotify from "../utils/Spotify";
 function App() {
   const [searchInput, setSearchInput] = useState("");
   const [searchResult, setSearchResult] = useState([]);
+  const [playlistName, setPlaylistName] = useState("New Playlist");
   const [playlist, setPlaylist] = useState([]);
 
   useEffect(() => {
@@ -16,6 +17,10 @@ function App() {
 
   function handleSearchInput({ target }) {
     setSearchInput(target.value);
+  }
+
+  function changePlaylistName({ target }) {
+    setPlaylistName(target.value);
   }
 
   async function search() {
@@ -37,7 +42,11 @@ function App() {
   }
 
   function savePlaylist() {
-    console.log("Saving playlist to Spotify");
+    const trackUris = playlist.map((track) => track.uri);
+    Spotify.savePlaylist(playlistName, trackUris).then(() => {
+      setPlaylistName("New Playlist");
+      setPlaylist([]);
+    });
   }
 
   return (
@@ -52,7 +61,13 @@ function App() {
       />
       <div className={styles.dataContainer}>
         <SearchResult results={searchResult} onAdd={add} />
-        <Playlist playlist={playlist} onRemove={remove} onSave={savePlaylist} />
+        <Playlist
+          playlist={playlist}
+          value={playlistName}
+          onRemove={remove}
+          onSave={savePlaylist}
+          onNameChange={changePlaylistName}
+        />
       </div>
     </div>
   );

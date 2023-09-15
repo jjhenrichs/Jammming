@@ -5,7 +5,12 @@ import Tracklist from "./Tracklist";
 export default function Playlist(props) {
   return (
     <div className={styles.container}>
-      <input type="text" className={styles.input} />
+      <input
+        type="text"
+        className={styles.input}
+        onChange={props.onNameChange}
+        value={props.value}
+      />
       <Tracklist
         tracks={props.playlist}
         inPlaylist={true}
