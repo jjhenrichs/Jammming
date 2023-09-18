@@ -3,7 +3,7 @@
   width: 400px;
   margin: 0 100px;
   background-color: cornflowerblue;
-  height: 400px;
+  height: 430px;
 }
 
 h2 {
@@ -14,5 +14,5 @@ h2 {
 }
 
 .trackContainer {
-  margin: 0 10px;
+  margin: 30px 10px;
 }

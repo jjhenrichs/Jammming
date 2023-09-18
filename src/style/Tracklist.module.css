@@ -1,7 +1,7 @@
 .container {
   margin: 5px 10px;
   overflow-y: auto;
-  max-height: 300px;
+  height: 300px;
 }
 
 /* Creating a custom scrollbar */
@@ -19,11 +19,11 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background-color: #3e5be0;
+  background-color: #777;
   border-radius: 20px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #364796;
+  background-color: #333;
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styles from "../style/App.module.css";
 import SearchBar from "./SearchBar";
 import SearchResult from "./SearchResults";
@@ -24,6 +24,8 @@ function App() {
   }
 
   async function search() {
+    setSearchResult([]);
+
     const result = await Spotify.search(searchInput);
     setSearchResult(result);
   }

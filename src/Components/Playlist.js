@@ -11,11 +11,14 @@ export default function Playlist(props) {
         onChange={props.onNameChange}
         value={props.value}
       />
-      <Tracklist
-        tracks={props.playlist}
-        inPlaylist={true}
-        onRemove={props.onRemove}
-      />
+      <div className={styles.trackContainer}>
+        <Tracklist
+          tracks={props.playlist}
+          inPlaylist={true}
+          onRemove={props.onRemove}
+        />
+      </div>
+
       <button type="submit" className={styles.btn} onClick={props.onSave}>
         Save to Spotify
       </button>

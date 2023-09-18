@@ -1,5 +1,5 @@
 .container {
-  border-bottom: 1px solid rgb(29, 81, 176);
+  border-bottom: 1px solid #333;
   margin: 5px;
   display: flex;
   align-items: center;
