@@ -4,7 +4,11 @@ import Track from "./Track";
 
 export default function Tracklist(props) {
   return (
-    <div className={styles.container}>
+    <div
+      className={
+        !props.inPlaylist ? styles.resultsContainer : styles.playlistContainer
+      }
+    >
       <div>
         {props.tracks.map((track) => (
           <Track

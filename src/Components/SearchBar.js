@@ -19,6 +19,13 @@ export default function SearchBar(props) {
         >
           Search
         </button>
+        <button
+          type="clear"
+          className={styles.clearBtn}
+          onClick={props.clearQuery}
+        >
+          Clear
+        </button>
       </div>
     </div>
   );

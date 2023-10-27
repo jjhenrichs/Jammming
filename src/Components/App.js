@@ -15,6 +15,10 @@ function App() {
     Spotify.getAccessToken();
   }, []);
 
+  function clear() {
+    setSearchInput("");
+  }
+
   function handleSearchInput({ target }) {
     setSearchInput(target.value);
   }
@@ -60,6 +64,7 @@ function App() {
         value={searchInput}
         onChange={handleSearchInput}
         submitQuery={search}
+        clearQuery={clear}
       />
       <div className={styles.dataContainer}>
         <SearchResult results={searchResult} onAdd={add} />
