@@ -1,4 +1,4 @@
-const client_id = process.env.REACT_APP_CLIENT_ID;
+const client_id = "334852632e8f48958ecfcaddff502b60";
 const redirect_uri = "https://jammming-jjhenrichs.netlify.app/";
 
 let url = "https://accounts.spotify.com/authorize";
