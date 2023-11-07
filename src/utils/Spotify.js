@@ -3,7 +3,7 @@ const redirect_uri = "https://jammming-jjhenrichs.netlify.app";
 
 let url = "https://accounts.spotify.com/authorize";
 url += "?response_type=token";
-url += `&client_id=334852632e8f48958ecfcaddff502b60`;
+url += `&client_id=${encodeURIComponent(client_id)}`;
 url += "&scope=playlist-modify-public";
 url += `&redirect_uri=${redirect_uri}`;
 
@@ -37,8 +37,6 @@ const Spotify = {
       }
     );
     const data = await response.json();
-
-    console.log(data.tracks.items);
 
     return data.tracks.items.map((track) => ({
       id: track.id,
