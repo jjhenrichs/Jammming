@@ -1,5 +1,5 @@
 const client_id = process.env.REACT_APP_CLIENT_ID;
-const redirect_uri = "https://animated-toffee-361a68.netlify.app/";
+const redirect_uri = "https://jammming-jjhenrichs.netlify.app/";
 
 let url = "https://accounts.spotify.com/authorize";
 url += "?response_type=token";
