@@ -37,7 +37,10 @@ Live demo [here]()
 
 ## Project Status
 
-The project is complete but would like to add new Features and add unit testing.
+The project is complete but would like to add:
+
+- Responsive Layout
+- Unit Testing
 
 ## Acknowledgements
 
