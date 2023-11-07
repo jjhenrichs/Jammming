@@ -1,5 +1,5 @@
 const clientId = "334852632e8f48958ecfcaddff502b60";
-const redirect_uri = "https://jammming-jjhenrichs.netlify.app";
+const redirect_uri = "https://jammming-jjhenrichs.netlify.app/";
 
 let url = "https://accounts.spotify.com/authorize";
 url += `?client_id=334852632e8f48958ecfcaddff502b60`;
