@@ -1,9 +1,9 @@
 .container {
   border-radius: 20px;
-  width: 250px;
+  width: 400px;
   margin: 0 50px;
-  background-color: #3cb371e6;
-  max-height: 350px;
+  background-color: #50c878;
+  max-height: 400px;
 }
 
 .input {
@@ -11,8 +11,8 @@
   background-color: transparent;
   border: transparent;
   border-bottom: 2px solid green;
-  height: 25px;
-  font-size: 1.4rem;
+  height: 40px;
+  font-size: 2rem;
   color: #fff;
   margin-top: 10px;
 }
@@ -24,13 +24,33 @@ input:focus {
 .btn {
   opacity: 1;
   margin: 0 0 10px;
-  height: 30px;
-  width: 120px;
+  height: 40px;
+  width: 140px;
   border-radius: 20px;
   border: transparent;
-  color: green;
+  color: black;
+  font-size: 1rem;
 }
 
 .trackContainer {
   margin: 0 10px;
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    margin: 0 auto 30px;
+    width: 100%;
+  }
+}
+/* Cell phone sizes */
+@media only screen and (max-width: 425px) {
+  .container {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .container {
+    width: 90%;
+  }
 }

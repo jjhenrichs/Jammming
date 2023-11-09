@@ -1,15 +1,29 @@
-.container {
-  text-align: center;
+* {
+  font-family: "Poppins";
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
   color: #fff;
 }
 
+.container {
+  text-align: center;
+}
+
 .highlight {
-  color: mediumspringgreen;
+  color: #50c878;
 }
 
 h1 {
-  font-size: 2.57rem;
+  font-size: 4rem;
+  width: 100%;
   margin: 0;
+  text-align: center;
 }
 
 .dataContainer {
@@ -17,4 +31,37 @@ h1 {
   justify-content: center;
   align-items: center;
   padding: 25px 0 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  .dataContainer {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .dataContainer {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+/* Cell phone sizes */
+@media only screen and (max-width: 425px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  h1 {
+    font-size: 2.75rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  h1 {
+    font-size: 2.5rem;
+  }
 }

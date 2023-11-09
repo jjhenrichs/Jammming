@@ -7,7 +7,7 @@ export default function SearchBar(props) {
       <input
         type="text"
         className={styles.input}
-        placeholder="Enter a song, artist, or album"
+        placeholder="Enter a song"
         value={props.value}
         onChange={props.onChange}
       />

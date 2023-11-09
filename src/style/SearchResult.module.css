@@ -1,19 +1,40 @@
 .container {
   border-radius: 20px;
-  width: 250px;
+  width: 400px;
   margin: 0 50px;
   background-color: rgb(20, 20, 114);
-  height: 350px;
 }
 
 h2 {
   text-align: left;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #eee;
   margin: 10px;
   padding: 0 5px;
 }
 
 .trackContainer {
-  padding: 0 5px;
+  padding: 0 10px 0 5px;
+  height: 300px;
+}
+
+/* Tablet size */
+@media only screen and (max-width: 768px) {
+  .container {
+    margin: 50px auto;
+  }
+}
+
+/* Cell phone sizes */
+@media only screen and (max-width: 425px) {
+  .container {
+    width: 85%;
+    margin: 30px auto;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .container {
+    width: 90%;
+  }
 }
