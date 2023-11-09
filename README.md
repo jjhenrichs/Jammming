@@ -25,7 +25,7 @@ into their Spotify Account.
 
 ## Demo
 
-Live demo [here](https://jammming-jjhenrichs.netlify.app/)
+Live demo [here](https://jammming-jeffhenrichs.netlify.app/)
 
 ## Lessons Learned
 

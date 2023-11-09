@@ -1,8 +1,9 @@
 const clientId = "334852632e8f48958ecfcaddff502b60";
-const redirect_uri = "http://localhost:3000/";
+// const redirect_uri = "http://localhost:3000/";
+const redirect_uri = "https://jammming-jeffhenrichs.netlify.app/";
 
 let url = "https://accounts.spotify.com/authorize";
-url += `?client_id=${clientId}`;
+url += `?client_id=334852632e8f48958ecfcaddff502b60`;
 url += "&response_type=token";
 url += "&scope=playlist-modify-public";
 url += `&redirect_uri=${redirect_uri}`;
