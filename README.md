@@ -8,6 +8,7 @@ into their Spotify Account.
 - React 18.2.0
 - React Testing library 13.4.0
 - Jest 5.17.0
+- [Spotify Web API](https://developer.spotify.com/documentation/web-api)
 
 ## Features
 
@@ -18,6 +19,7 @@ into their Spotify Account.
 - Prevents adding the same song twice to a playlist
 - Rename a playlist
 - Save the playlist into your Spotify Account
+- Responsive Layout ( can be viewed on 4k monitors, regular montiors, tablets, and cell phones);
 
 ## Screenshots
 
@@ -29,7 +31,9 @@ Live demo [here](https://jammming-jeffhenrichs.netlify.app/)
 
 ## Lessons Learned
 
+- Retieve data from a server using fetch API
 - Make a call to an API using useEffect
+- Resolve Promises using async and await keywords
 - Pass functions and variables with props
 - Make a request to a server and format the response
 - Display and position elements with CSS
@@ -39,8 +43,7 @@ Live demo [here](https://jammming-jeffhenrichs.netlify.app/)
 
 The project is complete but would like to add:
 
-- Responsive Layout
-- Unit Testing
+- Unit Testing (In Progress)
 
 ## Acknowledgements
 

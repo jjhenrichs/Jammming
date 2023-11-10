@@ -6,6 +6,7 @@ export default function SearchBar(props) {
     <div className={styles.container}>
       <input
         type="text"
+        name="songInput"
         className={styles.input}
         placeholder="Enter a song"
         value={props.value}
