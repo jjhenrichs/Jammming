@@ -48,11 +48,15 @@ function App() {
   }
 
   function savePlaylist() {
-    const trackUris = playlist.map((track) => track.uri);
-    Spotify.savePlaylist(playlistName, trackUris).then(() => {
-      setPlaylistName("New Playlist");
-      setPlaylist([]);
-    });
+    if (playlist.length >= 1) {
+      const trackUris = playlist.map((track) => track.uri);
+      Spotify.savePlaylist(playlistName, trackUris).then(() => {
+        setPlaylistName("New Playlist");
+        setPlaylist([]);
+      });
+    } else {
+      console.log(playlist.length, playlist);
+    }
   }
 
   return (
