@@ -81,4 +81,31 @@ describe("Track", () => {
     const plus = screen.getByText("+");
     expect(plus).toBeInTheDocument();
   });
+
+  it("adds a song", () => {
+    render(<Track key={1} track={track} inPlaylist={false} onAdd={onAdd} />);
+    const addButton = screen.getByText("+");
+    userEvent.click(addButton);
+    expect(onAdd).toBeCalled();
+  });
+
+  it("removes a song", () => {
+    render(
+      <Track key={1} track={track} inPlaylist={true} onRemove={onRemove} />
+    );
+    const minusButton = screen.getByText("-");
+    userEvent.click(minusButton);
+    expect(onRemove).toBeCalled();
+  });
+
+  it("can't add the same song twice", () => {
+    window.alert = jest.fn();
+    render(<Track key={1} track={track} inPlaylist={false} onAdd={onAdd} />);
+    const addButton = screen.getByText("+");
+    userEvent.dblClick(addButton);
+    expect(onAdd).toHaveReturnedWith(
+      alert(`${track.song} has already been added`)
+    );
+    window.alert.mockClear();
+  });
 });
