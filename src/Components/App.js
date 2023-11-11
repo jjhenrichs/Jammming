@@ -49,7 +49,6 @@ function App() {
 
   function savePlaylist() {
     if (playlist.length >= 1) {
-      console.log(playlist.length, playlist);
       const trackUris = playlist.map((track) => track.uri);
       Spotify.savePlaylist(playlistName, trackUris).then(() => {
         setPlaylistName("New Playlist");
