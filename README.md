@@ -22,7 +22,7 @@ A React Project that uses the Spotify Web API to search for songs, customize pla
 
 ## Screenshots
 
-![Jammming in montior sizes](./public/images/screenshot-1.png)
+[Jammming in montior sizes](./public/images/screenshot-1.png)
 ![Jammming in tabel size](./public/images/screenshot-2.png)
 ![Jammming in cell phone sizes](./public/images/screenshot-3.png)
 
