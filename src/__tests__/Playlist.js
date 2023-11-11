@@ -63,11 +63,13 @@ describe("Playlist", () => {
   });
 
   it("can't save an empty playlist", () => {
+    window.alert = jest.fn();
     render(
       <Playlist playlist={[]} onSave={onSave} onNameChange={onNameChange} />
     );
     const button = screen.getByRole("button", { name: /Save To Spotify/i });
     userEvent.click(button);
-    expect(onSave).not.toHaveReturned();
+    expect(onSave).toHaveReturned(alert("Cannot save an empty playlist"));
+    window.alert.mockClear();
   });
 });
