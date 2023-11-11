@@ -1,12 +1,13 @@
 # Jammmming
 
-A React Project that uses the Spotify Web API to search for songs, customize playlists, and save the paylist directly into their Spotify Account.
+A React Project that uses the Spotify Web API to search for songs, customize playlists, and save the playlist directly into their Spotify Account.
 
 ## Technology Used
 
 - React 18.2.0
-- React Testing library 13.4.0
+- React Testing Library 13.4.0
 - Jest 5.17.0
+- user-event 13.5.0
 - [Spotify Web API](https://developer.spotify.com/documentation/web-api)
 
 ## Features
@@ -17,12 +18,12 @@ A React Project that uses the Spotify Web API to search for songs, customize pla
 - Removes songs from a playlist
 - Prevents adding the same song twice to a playlist
 - Rename a playlist
-- Save the playlist into your Spotify Account
-- Responsive Layout ( can be viewed on 4k monitors, regular montiors, tablets, and cell phones);
+- Save the playlist to your Spotify Account
+- Responsive Layout ( can be viewed on 4k monitors, regular monitors, tablets, and cell phones);
 
 ## Screenshots
 
-[Jammming in montior sizes](./public/images/screenshot-1.png)
+![Jammming in montior sizes](./public/images/screenshot-1.png)
 ![Jammming in tabel size](./public/images/screenshot-2.png)
 ![Jammming in cell phone sizes](./public/images/screenshot-3.png)
 
@@ -32,7 +33,7 @@ Live demo [here](https://jammming-jeffhenrichs.netlify.app/)
 
 ## Lessons Learned
 
-- Retieve data from a server using fetch API
+- Retrieve data from a server using fetch API
 - Make a call to an API using useEffect
 - Resolve Promises using async and await keywords
 - Pass functions and variables with props
