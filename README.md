@@ -1,4 +1,4 @@
-# Jammmming
+# Jammming
 
 A React Project that uses the Spotify Web API to search for songs, customize playlists, and save the paylist directly into their Spotify Account.
 
