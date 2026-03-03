@@ -7,7 +7,7 @@ let accessToken;
 console.log("Client ID:", process.env.REACT_APP_SPOTIFY_CLIENT_ID);
 let authUrl =
   "https://accounts.spotify.com/authorize" +
-  `?client_id=334852632e8f48958ecfcaddff502b60` +
+  `?client_id=${clientId}` +
   "&response_type=code" +
   "&scope=playlist-modify-public" +
   `&redirect_uri=${redirect_uri}`;
