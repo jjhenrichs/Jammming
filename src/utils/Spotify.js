@@ -1,11 +1,43 @@
 const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+// const redirect_uri = "http://localhost:3000/";
 const redirect_uri = "https://jammming-jeffhenrichs.netlify.app/";
 
-let url = "https://accounts.spotify.com/authorize";
-url += `?client_id=${clientId}`;
-url += "&response_type=code";
-url += "&scope=playlist-modify-public";
-url += `&redirect_uri=${redirect_uri}`;
+let accessToken;
+
+let authUrl =
+  "https://accounts.spotify.com/authorize" +
+  `?client_id=${clientId}` +
+  "&response_type=code" +
+  "&scope=playlist-modify-public" +
+  `&redirect_uri=${redirect_uri}`;
+
+// Exchange code for access token
+async function exchangeCodeForToken(code) {
+  const response = await fetch("https://accounts.spotify.com/api/token", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      grant_type: "authorization_code",
+      code: code,
+      redirect_uri: redirect_uri,
+      client_id: clientId,
+    }),
+  });
+  return response.json();
+}
+
+// Handle the code on page load
+const urlParams = new URLSearchParams(window.location.search);
+const code = urlParams.get("code");
+
+if (code) {
+  exchangeCodeForToken(code).then((token) => {
+    accessToken = token.access_token;
+    window.history.replaceState({}, document.title, "/"); // Remove the code from the URL
+  });
+}
 
 const Spotify = {
   getAccessToken() {
@@ -13,17 +45,7 @@ const Spotify = {
       return accessToken;
     }
 
-    const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
-    const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
-    if (accessTokenMatch && expiresInMatch) {
-      accessToken = accessTokenMatch[1];
-      const expiresIn = Number(expiresInMatch[1]);
-      window.setTimeout(() => (accessToken = ""), expiresIn * 1000);
-      window.history.pushState("Access Token", null, "/"); // This clears the parameters, allowing us to grab a new access token when it expires.
-      return accessToken;
-    } else {
-      window.location = url;
-    }
+    window.location = authUrl; // Redirect to Spotify authorization
   },
   async search(term) {
     const response = await fetch(
