@@ -4,10 +4,11 @@ const redirect_uri = "https://jammming-jeffhenrichs.netlify.app/";
 
 let accessToken;
 
+console.log("Client ID:", process.env.REACT_APP_SPOTIFY_CLIENT_ID);
 let authUrl =
   "https://accounts.spotify.com/authorize" +
   `?client_id=334852632e8f48958ecfcaddff502b60` +
-  "&response_type=code" +
+  "&response_type=token" +
   "&scope=playlist-modify-public" +
   `&redirect_uri=${redirect_uri}`;
 
@@ -30,7 +31,7 @@ async function exchangeCodeForToken(code) {
 
 // Handle the code on page load
 const urlParams = new URLSearchParams(window.location.search);
-const code = urlParams.get("code");
+const code = urlParams.get("access_token"); // Get the access token from the URL
 
 if (code) {
   exchangeCodeForToken(code).then((token) => {
@@ -42,7 +43,6 @@ if (code) {
 const Spotify = {
   getAccessToken() {
     if (accessToken) {
-      console.log("Client ID:", process.env.REACT_APP_SPOTIFY_CLIENT_ID);
       return accessToken;
     }
 
